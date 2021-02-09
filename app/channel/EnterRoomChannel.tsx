@@ -7,7 +7,7 @@ import EnterRoomScreen from '../screen/EnterRoomScreen';
 
 const StackNavigator = createStackNavigator();
 
-const RoomEntryChannel = () => {
+const EnterRoomChannel = () => {
     return (
         <StackNavigator.Navigator>
             <StackNavigator.Screen
@@ -19,4 +19,4 @@ const RoomEntryChannel = () => {
 }
 
 
-export default RoomEntryChannel;
+export default EnterRoomChannel;

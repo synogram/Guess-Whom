@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Platform , View } from 'react-native';
-import GameRoomChannel from './channel/GameRoomChannel';
+import InGameRoomChannel from './channel/InGameRoomChannel';
 import EnterRoomScreen from './channel/EnterRoomChannel';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -12,7 +12,7 @@ export default function App() {
       <NavigationContainer>
         <View style={{width:'100%', height:'100%'}}>
           {
-            hasGameInstance ? <GameRoomChannel/> : <EnterRoomScreen/>        
+            hasGameInstance ? <InGameRoomChannel/> : <EnterRoomScreen/>        
           }
         </View>
       </NavigationContainer>

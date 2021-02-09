@@ -7,7 +7,7 @@ import {View, Text} from 'react-native';
 
 const StackNavigator = createStackNavigator();
 
-const RoomEntryChannel = () => {
+const InGameRoomChannel = () => {
     return (
         <StackNavigator.Navigator>
             <StackNavigator.Screen
@@ -19,4 +19,4 @@ const RoomEntryChannel = () => {
 }
 
 
-export default RoomEntryChannel;
+export default InGameRoomChannel;
