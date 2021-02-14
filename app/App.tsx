@@ -1,12 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Platform , View } from 'react-native';
+import InGameRoomChannel from './channel/InGameRoomChannel';
+import EnterRoomScreen from './channel/EnterRoomChannel';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
+  const [hasGameInstance, setHasGameInstance] = useState(false);
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+     <View style={styles.statusBar}></View>
+      <NavigationContainer>
+        <View style={{width:'100%', height:'100%'}}>
+          {
+            hasGameInstance ? <InGameRoomChannel/> : <EnterRoomScreen/>        
+          }
+        </View>
+      </NavigationContainer>
     </View>
   );
 }
@@ -14,8 +23,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  statusBar: {
+    height: (Platform.OS === 'ios') ? 34 : 0,
+    backgroundColor: 'black',
+    width:'100%',
+    borderWidth: 1
+  }
 });
