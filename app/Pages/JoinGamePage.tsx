@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, TextInput, View, Text, StyleSheet } from 'react-native';
 import GlobalStyles, { globalStyling } from '../styles/global';
+import EnterButton from '../component/EnterButton';
 
 const JoinGamePage = () => {
   return (
@@ -10,6 +11,7 @@ const JoinGamePage = () => {
       <TextInput style={Styles.inputBox}></TextInput>
       <Text style={[Styles.text, Styles.subText]}> Please Enter Room</Text>
       <TextInput style={Styles.inputBox}></TextInput>
+      <EnterButton />
     </SafeAreaView>
   );
 };
@@ -19,11 +21,9 @@ export default JoinGamePage;
 const Styles = StyleSheet.create({
   joinGameContainer: {
     backgroundColor: globalStyling.BLACK,
-    justifyContent: 'flex-start',
   },
 
   text: {
-    fontFamily: globalStyling.FONT,
     color: globalStyling.WHITE,
     alignSelf: 'center',
     textAlign: 'center',
@@ -31,7 +31,7 @@ const Styles = StyleSheet.create({
 
   headerText: {
     fontSize: 64,
-    marginTop: 130,
+    marginTop: 75,
   },
 
   subText: {
