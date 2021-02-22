@@ -2,21 +2,22 @@ import React from 'react';
 import { SafeAreaView, TextInput, View, Text, StyleSheet } from 'react-native';
 import GlobalStyles, { globalStyling } from '../styles/global';
 import EnterButton from '../component/EnterButton';
+import { JoinGameConstants } from '../constants/constants';
 
-const JoinGamePage = () => {
+const JoinGameScreen = () => {
   return (
     <SafeAreaView style={[GlobalStyles.safeAreaView, Styles.joinGameContainer]}>
-      <Text style={[Styles.text, Styles.headerText]}>Guess Whom</Text>
-      <Text style={[Styles.text, Styles.subText]}>Please Enter Your Real Name</Text>
+      <Text style={[Styles.text, Styles.headerText]}>{JoinGameConstants.headerText}</Text>
+      <Text style={[Styles.text, Styles.subText]}>{JoinGameConstants.subText}</Text>
       <TextInput style={Styles.inputBox}></TextInput>
-      <Text style={[Styles.text, Styles.subText]}> Please Enter Room</Text>
+      <Text style={[Styles.text, Styles.subText]}>{JoinGameConstants.enterRoomText}</Text>
       <TextInput style={Styles.inputBox}></TextInput>
       <EnterButton />
     </SafeAreaView>
   );
 };
 
-export default JoinGamePage;
+export default JoinGameScreen;
 
 const Styles = StyleSheet.create({
   joinGameContainer: {
