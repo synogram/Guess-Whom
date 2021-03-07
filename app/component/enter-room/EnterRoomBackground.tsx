@@ -1,10 +1,12 @@
 import React from 'react'
-import {Image, ImageBackground, StyleSheet} from 'react-native'
+import { ImageBackground, StyleSheet } from 'react-native'
+import BackgroundImage from '../../assets/enterscreen-background/enterscreen-background.png';
+
 export default (props) => {
     return (
         <ImageBackground
             style={[styles.backgroundImage, props.style]}
-            source={require('../../assets/enterscreen-background/enterscreen-background.png')}
+            source={BackgroundImage}
             // imageStyle={}
         >
             { props.children }

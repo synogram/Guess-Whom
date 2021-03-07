@@ -6,8 +6,13 @@ import EnterRoomBackground from '../component/enter-room/EnterRoomBackground';
 import global, { COLORS } from '../styles/global';
 import GuessWhomLogo from '../component/GuessWhomLogo';
 
+enum FormShowType {
+    JOIN = "Join",
+    CREATE = "Create",
+    DEFAULT = ""
+}
 export default () => {
-    const [shownForm, setShownForm] = useState<"Join" | "Create" | "">("");
+    const [shownForm, setShownForm] = useState<FormShowType>(FormShowType.DEFAULT);
     const [formState, setFormState] = useState<{ [key: string]: string }>({
         name: "",
         roomCode: "",
@@ -15,7 +20,7 @@ export default () => {
 
     let SlideForm = null;
 
-    if (shownForm === "Join") {
+    if (shownForm === FormShowType.JOIN) {
         SlideForm = (
             <View style={styles.slideFormContainerView}>
                 <EnterRoomTextForm
@@ -33,7 +38,7 @@ export default () => {
             </View>)
     }
 
-    if (shownForm === "Create") {
+    if (shownForm === FormShowType.CREATE) {
         SlideForm = (
             <View style={styles.slideFormContainerView}>
                 <EnterRoomTextForm
@@ -52,18 +57,18 @@ export default () => {
                     <View>
                         {SlideForm}
                         {
-                            (shownForm === "Join" || shownForm === "") ? (
+                            (shownForm === FormShowType.JOIN || shownForm === FormShowType.DEFAULT) ? (
                                 <EnterRoomButton
-                                    onClick={() => setShownForm("Join")}
+                                    onClick={() => setShownForm(FormShowType.JOIN)}
                                     title="Join Game"
                                     color={COLORS.THEME_ORANGE}
                                 />
                             ) : null
                         }
                         {
-                            (shownForm === "Create" || shownForm === "") ? (
+                            (shownForm === FormShowType.CREATE || shownForm === FormShowType.DEFAULT) ? (
                                 <EnterRoomButton
-                                    onClick={() => setShownForm("Create")}
+                                    onClick={() => setShownForm(FormShowType.CREATE)}
                                     title="Create Game"
                                     color={COLORS.THEME_PINK}
                                 />
@@ -74,8 +79,8 @@ export default () => {
                                 <Text style={styles.hyperlinkText}>How to play?</Text>
                             </Pressable>
                             {
-                                (shownForm !== "") ? (
-                                    <Pressable onPress={() => setShownForm("")}>
+                                (shownForm !== FormShowType.DEFAULT) ? (
+                                    <Pressable onPress={() => setShownForm(FormShowType.DEFAULT)}>
                                         <Text style={styles.hyperlinkText}>Go back</Text>
                                     </Pressable>
                                 ) : null
