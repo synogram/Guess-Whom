@@ -4,6 +4,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import EnterRoomScreen from '../screen/EnterRoomScreen';
+import FirebaseTestScreen from '../screen/FirebaseTestScreen';
 
 const StackNavigator = createStackNavigator();
 
@@ -12,7 +13,7 @@ const EnterRoomChannel = () => {
         <StackNavigator.Navigator>
             <StackNavigator.Screen
                 name='Enter'
-                component={EnterRoomScreen}
+                component={FirebaseTestScreen}
             />
         </StackNavigator.Navigator>
     )
