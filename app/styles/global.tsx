@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 export const COLORS = {
-    // TODO: Get proper colors.
     THEME_ORANGE: '#FFC800',
     THEME_PINK: '#FF0660',
     THEME_BLACK: '#1C1C1C',
