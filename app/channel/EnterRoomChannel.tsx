@@ -9,7 +9,11 @@ const StackNavigator = createStackNavigator();
 
 const EnterRoomChannel = () => {
     return (
-        <StackNavigator.Navigator>
+        <StackNavigator.Navigator
+            screenOptions={{
+                headerShown:false
+            }}
+        >
             <StackNavigator.Screen
                 name='Enter'
                 component={EnterRoomScreen}

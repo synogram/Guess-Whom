@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   statusBar: {
-    height: (Platform.OS === 'ios') ? 34 : 0,
+    height: (Platform.OS === 'ios') ? 40 : 0,
     backgroundColor: 'black',
     width:'100%',
     borderWidth: 1
