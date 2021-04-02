@@ -3,6 +3,7 @@ import { View, Text, Pressable, StyleSheet, SafeAreaView } from 'react-native';
 import EnterRoomButton from '../component/enter-room/EnterRoomButton';
 import EnterRoomTextForm from '../component/enter-room/EnterRoomTextForm';
 import EnterRoomBackground from '../component/enter-room/EnterRoomBackground';
+import HeaderBar from '../component/HeaderBar';
 import global, { COLORS } from '../styles/global';
 import GuessWhomLogo from '../component/GuessWhomLogo';
 
@@ -51,6 +52,9 @@ export default () => {
     }
     return (
         <SafeAreaView style={[global.safeAreaView]}>
+            {
+                (shownForm !== FormShowType.DEFAULT) ? <HeaderBar onGoBack={() => setShownForm(FormShowType.DEFAULT)} /> : null
+            }
             <EnterRoomBackground style={styles.containerView}>
                 <View style={styles.contentView}>
                     <GuessWhomLogo width={262} />
@@ -78,13 +82,6 @@ export default () => {
                             <Pressable>
                                 <Text style={styles.hyperlinkText}>How to play?</Text>
                             </Pressable>
-                            {
-                                (shownForm !== FormShowType.DEFAULT) ? (
-                                    <Pressable onPress={() => setShownForm(FormShowType.DEFAULT)}>
-                                        <Text style={styles.hyperlinkText}>Go back</Text>
-                                    </Pressable>
-                                ) : null
-                            }
                         </View>
                     </View>
                 </View>
@@ -104,19 +101,19 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly",
         height: "60%"
     },
-    hyperlinkContainerView:{
-        justifyContent:"center",
-        flexDirection:"row",        
+    hyperlinkContainerView: {
+        justifyContent: "center",
+        flexDirection: "row",
     },
     hyperlinkText: {
         textAlign: "center",
         marginTop: 30,
-        marginHorizontal:10,
+        marginHorizontal: 10,
         textDecorationLine: "underline",
         color: COLORS.THEME_WHITE,
         fontSize: 12,
     },
-    slideFormContainerView:{
+    slideFormContainerView: {
         height: 180,
     }
 })
