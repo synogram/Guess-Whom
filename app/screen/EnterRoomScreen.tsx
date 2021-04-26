@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, StyleSheet, SafeAreaView } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import EnterRoomButton from '../component/enter-room/EnterRoomButton';
 import EnterRoomTextForm from '../component/enter-room/EnterRoomTextForm';
 import EnterRoomBackground from '../component/enter-room/EnterRoomBackground';
 import HeaderBar from '../component/HeaderBar';
 import global, { COLORS } from '../styles/global';
 import GuessWhomLogo from '../component/GuessWhomLogo';
+import HowToPlayLink from '../component/enter-room/HowToPlayLink';
 
 enum FormShowType {
     JOIN = "Join",
@@ -79,9 +80,7 @@ export default () => {
                             ) : null
                         }
                         <View style={styles.hyperlinkContainerView}>
-                            <Pressable>
-                                <Text style={styles.hyperlinkText}>How to play?</Text>
-                            </Pressable>
+                            <HowToPlayLink/>
                         </View>
                     </View>
                 </View>
@@ -104,14 +103,6 @@ const styles = StyleSheet.create({
     hyperlinkContainerView: {
         justifyContent: "center",
         flexDirection: "row",
-    },
-    hyperlinkText: {
-        textAlign: "center",
-        marginTop: 30,
-        marginHorizontal: 10,
-        textDecorationLine: "underline",
-        color: COLORS.THEME_WHITE,
-        fontSize: 12,
     },
     slideFormContainerView: {
         height: 180,

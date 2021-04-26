@@ -4,6 +4,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import EnterRoomScreen from '../screen/EnterRoomScreen';
+import CharacterScreen from '../screen/CharacterScreen';
 
 const StackNavigator = createStackNavigator();
 
@@ -14,9 +15,13 @@ const EnterRoomChannel = () => {
                 headerShown:false
             }}
         >
-            <StackNavigator.Screen
+            {/* <StackNavigator.Screen
                 name='Enter'
                 component={EnterRoomScreen}
+            /> */}
+            <StackNavigator.Screen
+                name='Character'
+                component={CharacterScreen}
             />
         </StackNavigator.Navigator>
     )
